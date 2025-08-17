@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cat GIF</title>
+    <style>
+        @keyframes shimmer {
+            to {
+                background-position-x: 0%
+            }
+        }
+
+        body {
+            width: 300px;
+            margin: 0;
+        }
+
+        #cat-gif-container {
+            min-height: 200px;
+            background: lightgray;
+            /* Prevents layout shift while loading */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        #cat-gif-container.loading {
+            background: linear-gradient(-45deg, #eee 40%, #fafafa 50%, #eee 60%);
+            background-size: 300%;
+            background-position-x: 100%;
+            animation: shimmer 1s infinite linear;
+        }
+
+        #cat-gif {
+            max-width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cat-gif-container">
+        <img id="cat-gif" src="" alt="A random cat GIF">
+    </div>
+    <script src="popup.js"></script>
+</body>
+
+</html>
